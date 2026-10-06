@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Aurea</title>
+  <link rel="icon" href="../assets/aurea.svg">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <main data-title-pt="Aurea · Voltar à Aurea" data-title-en="Aurea · Back to Aurea" data-title-fr="Aurea · Retour à Aurea">
+    <div class="brand"><img src="../assets/aurea.svg" alt=""><img class="wordmark" src="../assets/aurea-nome.svg" alt="Aurea"></div>
+
+    <section id="returning" hidden>
+      <h1 data-lang="pt">A voltar à Aurea…</h1>
+      <h1 data-lang="en">Going back to Aurea…</h1>
+      <h1 data-lang="fr">Retour à Aurea…</h1>
+      <p data-lang="pt">A autorização no banco terminou. A Aurea vai abrir e concluir a ligação sozinha. Se o navegador perguntar se queres abrir a Aurea, carrega em Abrir.</p>
+      <p data-lang="en">Your bank authorisation is done. Aurea will open and finish the connection on its own. If your browser asks whether to open Aurea, choose Open.</p>
+      <p data-lang="fr">L’autorisation auprès de la banque est terminée. Aurea va s’ouvrir et finaliser la connexion toute seule. Si le navigateur demande s’il faut ouvrir Aurea, choisissez Ouvrir.</p>
+    </section>
+
+    <section id="failed" hidden>
+      <h1 data-lang="pt">A autorização não foi concluída</h1>
+      <h1 data-lang="en">The authorisation wasn’t completed</h1>
+      <h1 data-lang="fr">L’autorisation n’a pas abouti</h1>
+      <p data-lang="pt">O banco não confirmou o acesso. Volta à Aurea e tenta outra vez.</p>
+      <p data-lang="en">Your bank didn’t confirm access. Go back to Aurea and try again.</p>
+      <p data-lang="fr">La banque n’a pas confirmé l’accès. Revenez dans Aurea et réessayez.</p>
+    </section>
+
+    <section id="idle" hidden>
+      <h1 data-lang="pt">Regresso do banco</h1>
+      <h1 data-lang="en">Return from your bank</h1>
+      <h1 data-lang="fr">Retour de la banque</h1>
+      <p data-lang="pt">Esta página recebe o regresso do banco quando ligas uma conta na Aurea. Neste momento não há nenhuma autorização a concluir, por isso podes fechá-la.</p>
+      <p data-lang="en">This page receives your return from the bank when you connect an account in Aurea. There’s no authorisation to finish right now, so you can close it.</p>
+      <p data-lang="fr">Cette page reçoit le retour de la banque lorsque vous connectez un compte dans Aurea. Il n’y a aucune autorisation à finaliser pour le moment, vous pouvez la fermer.</p>
+    </section>
+
+    <section id="fallback" hidden>
+      <div class="actions">
+        <a class="button" id="open">
+          <span data-lang="pt">Abrir a Aurea</span><span data-lang="en">Open Aurea</span><span data-lang="fr">Ouvrir Aurea</span>
+        </a>
+        <button class="button" type="button" id="copy">
+          <span class="copy-idle" data-lang="pt">Copiar endereço</span><span class="copy-idle" data-lang="en">Copy address</span><span class="copy-idle" data-lang="fr">Copier l’adresse</span>
+        </button>
+      </div>
+      <p data-lang="pt">Se a Aurea não abrir, carrega em Copiar endereço e cola-o na Aurea, no campo "Endereço da página final".</p>
+      <p data-lang="en">If Aurea doesn’t open, choose Copy address and paste it into Aurea, in the “Final page address” field.</p>
+      <p data-lang="fr">Si Aurea ne s’ouvre pas, choisissez Copier l’adresse et collez-la dans Aurea, dans le champ « Adresse de la page finale ».</p>
+      <div class="address" id="address"></div>
+    </section>
+
+    <p data-lang="pt" style="margin-top:24px;font-size:13px">Esta página não guarda nem envia nada: o código que o banco devolve só é lido aqui, no teu navegador.</p>
+    <p data-lang="en" style="margin-top:24px;font-size:13px">This page doesn’t store or send anything: the code your bank returns is only read here, in your browser.</p>
+    <p data-lang="fr" style="margin-top:24px;font-size:13px">Cette page n’enregistre et n’envoie rien : le code renvoyé par la banque est lu uniquement ici, dans votre navigateur.</p>
+
+    <div class="languages">
+      <button type="button" data-set="pt">Português</button>
+      <button type="button" data-set="en">English</button>
+      <button type="button" data-set="fr">Français</button>
+    </div>
+  </main>
+  <footer>
+    <a href="../privacy/"><span data-lang="pt">Privacidade</span><span data-lang="en">Privacy</span><span data-lang="fr">Confidentialité</span></a>
+    <a href="../terms/"><span data-lang="pt">Termos</span><span data-lang="en">Terms</span><span data-lang="fr">Conditions</span></a>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search)
+      var hasReturn = params.has('code') || params.has('error')
+      var appUrl = 'aurea://callback' + location.search
+      var show = function (id) { document.getElementById(id).hidden = false }
+
+      if (!hasReturn) return show('idle')
+
+      show(params.has('code') ? 'returning' : 'failed')
+      show('fallback')
+      document.getElementById('open').href = appUrl
+      document.getElementById('address').textContent = location.href
+
+      var copy = document.getElementById('copy')
+      var labels = { pt: 'Copiado', en: 'Copied', fr: 'Copié' }
+      copy.addEventListener('click', function () {
+        navigator.clipboard.writeText(location.href).then(function () {
+          var spans = copy.querySelectorAll('.copy-idle')
+          for (var i = 0; i < spans.length; i++) spans[i].textContent = labels[spans[i].dataset.lang]
+        })
+      })
+
+      setTimeout(function () { location.href = appUrl }, 400)
+    })()
+  </script>
+</body>
+</html>
