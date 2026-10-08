@@ -4,28 +4,304 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aurea</title>
+  <meta name="description" content="Aurea: all your personal finances in one place, on your computer. Private and encrypted.">
   <link rel="icon" href="assets/aurea.svg">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-  <main data-title-pt="Aurea" data-title-en="Aurea" data-title-fr="Aurea">
-    <div class="brand"><img src="assets/aurea.svg" alt=""><img class="wordmark" src="assets/aurea-nome.svg" alt="Aurea"></div>
-    <h1 data-lang="pt">Finanças pessoais, privadas e no teu computador</h1>
-    <h1 data-lang="en">Personal finance, private and on your computer</h1>
-    <h1 data-lang="fr">Finances personnelles, privées et sur votre ordinateur</h1>
-    <p data-lang="pt">A Aurea junta as tuas contas, créditos, bens e investimentos num só sítio. Os dados ficam no teu computador, encriptados, e as ligações ao banco são só de leitura.</p>
-    <p data-lang="en">Aurea brings your accounts, loans, assets and investments together in one place. Your data stays on your computer, encrypted, and bank connections are read-only.</p>
-    <p data-lang="fr">Aurea réunit vos comptes, crédits, biens et placements en un seul endroit. Vos données restent sur votre ordinateur, chiffrées, et les connexions bancaires sont en lecture seule.</p>
-    <div class="languages">
-      <button type="button" data-set="pt">Português</button>
-      <button type="button" data-set="en">English</button>
-      <button type="button" data-set="fr">Français</button>
-    </div>
-  </main>
-  <footer>
-    <a href="privacy/"><span data-lang="pt">Privacidade</span><span data-lang="en">Privacy</span><span data-lang="fr">Confidentialité</span></a>
-    <a href="terms/"><span data-lang="pt">Termos</span><span data-lang="en">Terms</span><span data-lang="fr">Conditions</span></a>
-  </footer>
+<body class="landing">
+  <div class="landing-wrap" data-title-pt="Aurea · Finanças pessoais no teu computador" data-title-en="Aurea · Personal finance on your computer" data-title-fr="Aurea · Vos finances personnelles sur votre ordinateur">
+    <nav class="landing-nav">
+      <div class="brand"><img class="wordmark" src="assets/aurea-nome.svg" alt="Aurea"></div>
+      <div class="languages" style="margin:0">
+        <button type="button" data-set="pt">PT</button>
+        <button type="button" data-set="en">EN</button>
+        <button type="button" data-set="fr">FR</button>
+      </div>
+    </nav>
+
+    <!-- PT -->
+    <section data-lang="pt">
+      <div class="hero">
+        <h1>As tuas finanças, num só sítio. E só no teu computador.</h1>
+        <p class="lead">Contas, créditos, investimentos, a casa e o carro, tudo num só sítio. A Aurea mostra-te o que aí vem, dos pagamentos aos aniversários, e os teus dados ficam encriptados no teu computador, não numa nuvem qualquer.</p>
+        <div class="actions">
+          <a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Comprar a Aurea · 24,99 €</a>
+          <a class="button" href="#funcionalidades-pt">Ver o que faz</a>
+        </div>
+        <p class="price-note">Pagamento único, sem subscrição · Windows 10 e 11 · Multilingue</p>
+      </div>
+      <img class="shot shot-hero" src="assets/shots/pt-inicio.jpg" alt="Início da Aurea com património, saúde financeira e planeamento do mês">
+
+      <h2 class="section-title" id="funcionalidades-pt">Feita para te facilitar a vida</h2>
+      <p class="section-lead">Menos tempo em folhas de cálculo e mais certezas sobre o teu dinheiro.</p>
+      <div class="features">
+        <div class="feature"><h3>Todas as tuas finanças num só sítio</h3><p>Contas, créditos, investimentos, a casa e o carro, tudo junto. Finalmente vês de uma vez o que tens, o que deves e quanto vale o teu património.</p></div>
+        <div class="feature"><h3>Nada te escapa</h3><p>Salário, renda, subscrições, prestações e até aniversários aparecem antes de acontecerem. Com a Aurea ficas a par de tudo o que se passa.</p></div>
+        <div class="feature"><h3>Os movimentos com o nome que quiseres</h3><p>Dá a cada movimento o nome e a categoria que fazem sentido para ti. Fazes uma vez e a Aurea lembra-se para os próximos.</p></div>
+        <div class="feature"><h3>Sabe hoje como acaba o mês</h3><p>A Aurea junta o que tens, o que ainda vais pagar e o que vais receber, e diz-te com quanto chegas ao fim do mês. Sem surpresas no dia 30.</p></div>
+        <div class="feature"><h3>Vê o teu dinheiro a crescer</h3><p>Acompanha mês a mês o teu património e os teus investimentos. Investes em dólares, libras ou bitcoin? A Aurea converte tudo para euros.</p></div>
+        <div class="feature"><h3>Uma nota à tua saúde financeira</h3><p>Uma pontuação simples mostra-te o que está a correr bem e onde podes melhorar. Serve para te orientares e não é aconselhamento financeiro.</p></div>
+      </div>
+
+      <h2 class="section-title">Vê como é</h2>
+      <div class="gallery">
+        <figure><img class="shot" src="assets/shots/pt-movimentos.jpg" alt="Movimentos" loading="lazy"><figcaption>Movimentos: cada entrada e saída, com categorias, filtros por conta e período, e pesquisa</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-recorrentes.jpg" alt="Recorrentes" loading="lazy"><figcaption>Recorrentes: salário, renda e subscrições previstos, prontos a confirmar</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-contas.jpg" alt="Contas" loading="lazy"><figcaption>Contas: o saldo de cada conta e como evoluiu</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-creditos.jpg" alt="Créditos" loading="lazy"><figcaption>Créditos: capital em dívida, próximas prestações e quando acabas de pagar</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-bens.jpg" alt="Bens" loading="lazy"><figcaption>Bens: a casa, o carro e o que valem hoje face ao que pagaste</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-investimentos.jpg" alt="Investimentos" loading="lazy"><figcaption>Investimentos: cotações automáticas para ações e ETF, e PPR ou certificados atualizados à mão</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/pt-calendario.jpg" alt="Calendário" loading="lazy"><figcaption>Calendário: pagamentos, aniversários e feriados, com o ano inteiro à vista</figcaption></figure>
+      </div>
+
+      <h2 class="section-title">E ainda</h2>
+      <ul class="more">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>A tua agenda pessoal:</strong> o calendário junta pagamentos, aniversários, feriados e os teus eventos, e sincroniza com o Google Calendar.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Créditos sem surpresas:</strong> sabes quanto falta pagar e quando acabas.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>A casa e o carro também contam:</strong> acompanha quanto valem.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>O banco ligado, só para ler:</strong> os movimentos chegam sozinhos, ou importas o extrato.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor e inflação à mão:</strong> sem teres de as ir procurar.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Um perfil para cada pessoa da casa:</strong> cada um com a sua password.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Bloqueia-se sozinha:</strong> quando te afastas do computador.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Cópias de segurança:</strong> sempre que quiseres.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Arruma o que já não usas:</strong> sem perder o histórico.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Aprendes em minutos:</strong> com a visita guiada e o centro de ajuda.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Atualiza-se sozinha:</strong> e as atualizações estão incluídas.</span></li>
+      </ul>
+      <p class="more-end">E muito mais.</p>
+
+      <div class="privacy-band">
+        <h2>Os teus dados não saem do teu computador</h2>
+        <p class="privacy-lead">Uma app de finanças sabe tudo sobre ti. Por isso a Aurea foi feita para não guardar nada fora do teu computador.</p>
+        <div class="privacy-points">
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><h3>Encriptados com a tua password</h3><p>Sem a password, ninguém abre os teus dados. Nem a Aurea.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 1.6-9.74A6 6 0 0 1 21 12.5"/><path d="M3 3l18 18"/></svg><h3>Sem nuvem e sem contas</h3><p>Não há servidores com os teus dados nem registo online. Está tudo no teu computador.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.7"/><path d="M19 12.9a10 10 0 0 0-2.1-1.6"/><path d="M2 8.8a15 15 0 0 1 4.2-2.6"/><path d="M22 8.8A15 15 0 0 0 11 4.6"/><path d="M3 3l18 18"/></svg><h3>Também podes usá-la offline</h3><p>Se preferires, a Aurea funciona sem internet. Algumas funcionalidades, como a ligação ao banco e as cotações, precisam de ligação.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>Banco só de leitura</h3><p>A Aurea vê os movimentos, mas nunca mexe no teu dinheiro.</p></div>
+        </div>
+        <p class="privacy-link"><a href="privacy/?lang=pt">Lê a política de privacidade</a></p>
+      </div>
+
+      <h2 class="section-title">Preço</h2>
+      <div class="pricing">
+        <div class="amount">24,99 €</div>
+        <p>Pagamento único. Sem subscrição.</p>
+        <ul>
+          <li>Licença para 2 computadores ao mesmo tempo</li>
+          <li>Atualizações automáticas incluídas</li>
+          <li>Vários perfis, cada um com a sua password</li>
+          <li>Em português, inglês e francês</li>
+        </ul>
+        <div class="actions" style="justify-content:center"><a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Comprar a Aurea</a></div>
+        <p class="price-note">O pagamento é tratado pela Lemon Squeezy, que emite a fatura. Depois da compra recebes por email o link para descarregar e a tua chave.</p>
+      </div>
+
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>O Windows mostra um aviso ao instalar. É normal?</summary><p>Sim. A Aurea ainda não tem assinatura digital, por isso o Windows mostra "O Windows protegeu o seu PC". Carrega em "Mais informações" e depois em "Executar mesmo assim". Só acontece ao instalar.</p></details>
+        <details><summary>Preciso de internet?</summary><p>Para tirares partido de tudo, sim. Se preferires, podes usar a Aurea sem internet: registas, consultas e planeias tudo, mas ficas sem algumas funcionalidades. Precisam de ligação: a ativação da licença (só uma vez), a ligação automática ao banco, as cotações dos investimentos e o câmbio, indicadores como a Euribor e a inflação, a sincronização com o Google Calendar, as atualizações da Aurea e o envio de relatórios de problemas. Sem ligação, ficas com os últimos valores conhecidos.</p></details>
+        <details><summary>Que bancos funcionam?</summary><p>A ligação automática usa a Enable Banking, que cobre a maioria dos bancos europeus. Também podes importar extratos em CSV, CAMT.053 ou MT940, ou registar tudo à mão.</p></details>
+        <details><summary>Funciona fora de Portugal?</summary><p>Sim, em toda a Europa. A Aurea trabalha em euros e a ligação automática cobre a maioria dos bancos europeus. Se tiveres investimentos noutras moedas, como dólares ou libras, a Aurea converte-os para euros ao câmbio do dia.</p></details>
+        <details><summary>Posso usar a Aurea noutro computador?</summary><p>Sim. Cada chave dá para dois computadores ao mesmo tempo. Para mudar de computador, libertas o antigo nas Definições e ativas o novo.</p></details>
+        <details><summary>E se perder a password?</summary><p>A Aurea não consegue recuperar os dados sem a password, por isso guarda-a bem e faz cópias de segurança (a Aurea tem essa opção).</p></details>
+        <details><summary>Funciona em Mac?</summary><p>Por agora, só em Windows 10 e 11.</p></details>
+        <details><summary>Posso devolver?</summary><p>Como é um conteúdo digital entregue de imediato, ao comprar abdicas do direito de desistência de 14 dias. Se a Aurea não funcionar como descrito, escreve-nos e resolvemos. Vê os <a href="terms/?lang=pt">Termos de utilização</a>.</p></details>
+        <details><summary>É aconselhamento financeiro?</summary><p>Não. A Aurea organiza e mostra os teus números. A pontuação de saúde financeira e as previsões são apenas indicações calculadas a partir do que registas, não recomendações. A Aurea não aconselha investimentos nem produtos financeiros e as decisões são sempre tuas. Para decisões importantes, fala com um profissional qualificado.</p></details>
+      </div>
+    </section>
+
+    <!-- EN -->
+    <section data-lang="en">
+      <div class="hero">
+        <h1>Your finances in one place. And only on your computer.</h1>
+        <p class="lead">Accounts, loans, investments, your home and your car, all in one place. Aurea shows you what’s coming, from bills to birthdays, and your data stays encrypted on your computer, not in some cloud.</p>
+        <div class="actions">
+          <a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Buy Aurea · €24.99</a>
+          <a class="button" href="#features-en">See what it does</a>
+        </div>
+        <p class="price-note">One-time payment, no subscription · Windows 10 and 11 · Multilingual</p>
+      </div>
+      <img class="shot shot-hero" src="assets/shots/en-inicio.jpg" alt="Aurea home with net worth, financial health and month planning">
+
+      <h2 class="section-title" id="features-en">Made to make your life easier</h2>
+      <p class="section-lead">Less time in spreadsheets, more certainty about your money.</p>
+      <div class="features">
+        <div class="feature"><h3>All your finances in one place</h3><p>Accounts, loans, investments, your home and your car, all together. At last you see at a glance what you own, what you owe and what your net worth is.</p></div>
+        <div class="feature"><h3>Nothing slips through</h3><p>Salary, rent, subscriptions, loan instalments and even birthdays show up before they happen. With Aurea you always know what’s going on.</p></div>
+        <div class="feature"><h3>Transactions named your way</h3><p>Give each transaction the name and category that make sense to you. Do it once and Aurea remembers it for the next ones.</p></div>
+        <div class="feature"><h3>Know today how the month will end</h3><p>Aurea combines what you have, what you still have to pay and what’s coming in, and tells you what you’ll have left at the end of the month. No more surprises on the 30th.</p></div>
+        <div class="feature"><h3>Watch your money grow</h3><p>Follow your net worth and your investments month after month. Investing in dollars, pounds or bitcoin? Aurea converts it all to euros.</p></div>
+        <div class="feature"><h3>A score for your financial health</h3><p>One simple score shows you what’s going well and where you could improve. It’s there to guide you, not as financial advice.</p></div>
+      </div>
+
+      <h2 class="section-title">Take a look</h2>
+      <div class="gallery">
+        <figure><img class="shot" src="assets/shots/en-movimentos.jpg" alt="Transactions" loading="lazy"><figcaption>Transactions: every payment in and out, with categories, filters by account and period, and search</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-recorrentes.jpg" alt="Recurring transactions" loading="lazy"><figcaption>Recurring transactions: salary, rent and subscriptions planned ahead, ready to confirm</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-contas.jpg" alt="Accounts" loading="lazy"><figcaption>Accounts: each balance and how it has changed</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-creditos.jpg" alt="Loans" loading="lazy"><figcaption>Loans: outstanding balance, upcoming instalments and when you’ll be debt free</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-bens.jpg" alt="Assets" loading="lazy"><figcaption>Assets: your home, your car and what they’re worth today compared with what you paid</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-investimentos.jpg" alt="Investments" loading="lazy"><figcaption>Investments: automatic prices for shares and ETFs, and pension plans or savings certificates updated by hand</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/en-calendario.jpg" alt="Calendar" loading="lazy"><figcaption>Calendar: payments, birthdays and holidays, with the whole year at a glance</figcaption></figure>
+      </div>
+
+      <h2 class="section-title">Plus</h2>
+      <ul class="more">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Your personal planner:</strong> the calendar brings together payments, birthdays, holidays and your own events, and syncs with Google Calendar.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Loans without surprises:</strong> know how much is left and when you’ll be done.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Your home and car count too:</strong> keep track of what they’re worth.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Your bank connected, read only:</strong> transactions arrive on their own, or import a statement.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor and inflation at hand:</strong> no need to go looking for them.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>A profile for everyone at home:</strong> each with their own password.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Locks itself:</strong> when you step away from your computer.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Backups:</strong> whenever you like.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Tidy away what you no longer use:</strong> without losing its history.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Learn it in minutes:</strong> with the guided tour and the help centre.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Updates itself:</strong> and updates are included.</span></li>
+      </ul>
+      <p class="more-end">And much more.</p>
+
+      <div class="privacy-band">
+        <h2>Your data never leaves your computer</h2>
+        <p class="privacy-lead">A finance app knows everything about you. That’s why Aurea was built to keep nothing outside your computer.</p>
+        <div class="privacy-points">
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><h3>Encrypted with your password</h3><p>Without your password, nobody can open your data. Not even Aurea.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 1.6-9.74A6 6 0 0 1 21 12.5"/><path d="M3 3l18 18"/></svg><h3>No cloud, no account</h3><p>No servers holding your data and no online sign-up. Everything stays on your computer.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.7"/><path d="M19 12.9a10 10 0 0 0-2.1-1.6"/><path d="M2 8.8a15 15 0 0 1 4.2-2.6"/><path d="M22 8.8A15 15 0 0 0 11 4.6"/><path d="M3 3l18 18"/></svg><h3>You can also use it offline</h3><p>If you prefer, Aurea works without the internet. Some features, such as the bank connection and market prices, need a connection.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>Read-only bank access</h3><p>Aurea sees your transactions but never touches your money.</p></div>
+        </div>
+        <p class="privacy-link"><a href="privacy/?lang=en">Read the privacy policy</a></p>
+      </div>
+
+      <h2 class="section-title">Price</h2>
+      <div class="pricing">
+        <div class="amount">€24.99</div>
+        <p>One-time payment. No subscription.</p>
+        <ul>
+          <li>Licence for 2 computers at the same time</li>
+          <li>Automatic updates included</li>
+          <li>Several profiles, each with its own password</li>
+          <li>In Portuguese, English and French</li>
+        </ul>
+        <div class="actions" style="justify-content:center"><a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Buy Aurea</a></div>
+        <p class="price-note">Payment is handled by Lemon Squeezy, which issues the invoice. After buying, you get the download link and your key by email.</p>
+      </div>
+
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq">
+        <details><summary>Windows shows a warning when installing. Is that normal?</summary><p>Yes. Aurea isn’t digitally signed yet, so Windows shows “Windows protected your PC”. Click “More info” and then “Run anyway”. It only happens when installing.</p></details>
+        <details><summary>Do I need the internet?</summary><p>To get the most out of it, yes. If you prefer, you can use Aurea offline: you can record, check and plan everything, but some features won’t be available. These need a connection: activating your licence (once only), the automatic bank connection, investment prices and exchange rates, indicators such as Euribor and inflation, Google Calendar sync, Aurea updates and sending problem reports. Offline, you keep the last known values.</p></details>
+        <details><summary>Which banks work?</summary><p>The automatic connection uses Enable Banking, which covers most European banks. You can also import CSV, CAMT.053 or MT940 statements, or enter everything by hand.</p></details>
+        <details><summary>Does it work outside Portugal?</summary><p>Yes, across Europe. Aurea works in euros and the automatic bank connection covers most European banks. If you hold investments in other currencies, such as dollars or pounds, Aurea converts them to euros at the day’s exchange rate.</p></details>
+        <details><summary>Can I use Aurea on another computer?</summary><p>Yes. Each key covers two computers at the same time. To switch, release the old one in Settings and activate the new one.</p></details>
+        <details><summary>What if I lose my password?</summary><p>Aurea can’t recover your data without the password, so keep it safe and make backups (Aurea has an option for that).</p></details>
+        <details><summary>Does it work on Mac?</summary><p>For now, only on Windows 10 and 11.</p></details>
+        <details><summary>Can I get a refund?</summary><p>Because it’s digital content delivered immediately, you waive the 14-day right of withdrawal when you buy. If Aurea doesn’t work as described, write to us and we’ll sort it out. See the <a href="terms/?lang=en">Terms of use</a>.</p></details>
+        <details><summary>Is it financial advice?</summary><p>No. Aurea organises and shows your numbers. The financial health score and the forecasts are only indications calculated from what you record, not recommendations. Aurea doesn’t advise on investments or financial products, and the decisions are always yours. For important decisions, talk to a qualified professional.</p></details>
+      </div>
+    </section>
+
+    <!-- FR -->
+    <section data-lang="fr">
+      <div class="hero">
+        <h1>Vos finances au même endroit. Et uniquement sur votre ordinateur.</h1>
+        <p class="lead">Comptes, crédits, placements, logement et voiture, tout au même endroit. Aurea vous montre ce qui arrive, des factures aux anniversaires, et vos données restent chiffrées sur votre ordinateur, pas dans un cloud quelconque.</p>
+        <div class="actions">
+          <a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Acheter Aurea · 24,99 €</a>
+          <a class="button" href="#fonctions-fr">Voir ce qu’elle fait</a>
+        </div>
+        <p class="price-note">Paiement unique, sans abonnement · Windows 10 et 11 · Multilingue</p>
+      </div>
+      <img class="shot shot-hero" src="assets/shots/fr-inicio.jpg" alt="Accueil d’Aurea avec patrimoine, santé financière et planification du mois">
+
+      <h2 class="section-title" id="fonctions-fr">Pensée pour vous simplifier la vie</h2>
+      <p class="section-lead">Moins de temps dans les tableurs, plus de certitudes sur votre argent.</p>
+      <div class="features">
+        <div class="feature"><h3>Toutes vos finances au même endroit</h3><p>Comptes, crédits, placements, logement et voiture, tout ensemble. Vous voyez enfin d’un coup d’œil ce que vous avez, ce que vous devez et ce que vaut votre patrimoine.</p></div>
+        <div class="feature"><h3>Rien ne vous échappe</h3><p>Salaire, loyer, abonnements, échéances et même anniversaires apparaissent avant d’arriver. Avec Aurea, vous êtes au courant de tout.</p></div>
+        <div class="feature"><h3>Des opérations au nom que vous voulez</h3><p>Donnez à chaque opération le nom et la catégorie qui ont du sens pour vous. Vous le faites une fois et Aurea s’en souvient pour les suivantes.</p></div>
+        <div class="feature"><h3>Sachez dès aujourd’hui comment finira le mois</h3><p>Aurea réunit ce que vous avez, ce qu’il reste à payer et ce que vous allez recevoir, et vous dit avec combien vous finirez le mois. Fini les surprises le 30.</p></div>
+        <div class="feature"><h3>Regardez votre argent grandir</h3><p>Suivez mois après mois votre patrimoine et vos placements. Vous investissez en dollars, en livres ou en bitcoin ? Aurea convertit tout en euros.</p></div>
+        <div class="feature"><h3>Une note pour votre santé financière</h3><p>Un score simple vous montre ce qui va bien et ce que vous pouvez améliorer. Il sert de repère et ne constitue pas un conseil financier.</p></div>
+      </div>
+
+      <h2 class="section-title">Aperçu</h2>
+      <div class="gallery">
+        <figure><img class="shot" src="assets/shots/fr-movimentos.jpg" alt="Opérations" loading="lazy"><figcaption>Opérations : chaque entrée et sortie, avec catégories, filtres par compte et période, et recherche</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-recorrentes.jpg" alt="Opérations récurrentes" loading="lazy"><figcaption>Opérations récurrentes : salaire, loyer et abonnements prévus, prêts à confirmer</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-contas.jpg" alt="Comptes" loading="lazy"><figcaption>Comptes : le solde de chaque compte et son évolution</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-creditos.jpg" alt="Crédits" loading="lazy"><figcaption>Crédits : capital restant dû, prochaines échéances et date de fin</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-bens.jpg" alt="Biens" loading="lazy"><figcaption>Biens : votre logement, votre voiture et leur valeur actuelle par rapport au prix payé</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-investimentos.jpg" alt="Investissements" loading="lazy"><figcaption>Investissements : cours automatiques pour les actions et ETF, épargne retraite ou bons d’épargne mis à jour à la main</figcaption></figure>
+        <figure><img class="shot" src="assets/shots/fr-calendario.jpg" alt="Calendrier" loading="lazy"><figcaption>Calendrier : paiements, anniversaires et jours fériés, avec toute l’année sous les yeux</figcaption></figure>
+      </div>
+
+      <h2 class="section-title">Et aussi</h2>
+      <ul class="more">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Votre agenda personnel :</strong> le calendrier réunit paiements, anniversaires, jours fériés et vos propres événements, et se synchronise avec Google Agenda.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Des crédits sans surprise :</strong> vous savez ce qu’il reste à payer et quand vous aurez fini.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Le logement et la voiture comptent aussi :</strong> suivez leur valeur.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Votre banque connectée, en lecture seule :</strong> les opérations arrivent toutes seules, ou importez un relevé.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor et inflation sous la main :</strong> sans avoir à les chercher.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Un profil pour chaque personne du foyer :</strong> chacun avec son mot de passe.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Se verrouille toute seule :</strong> quand vous vous éloignez de l’ordinateur.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Des sauvegardes :</strong> quand vous le souhaitez.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Rangez ce que vous n’utilisez plus :</strong> sans perdre l’historique.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Prise en main en quelques minutes :</strong> avec la visite guidée et le centre d’aide.</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Se met à jour toute seule :</strong> et les mises à jour sont incluses.</span></li>
+      </ul>
+      <p class="more-end">Et bien plus encore.</p>
+
+      <div class="privacy-band">
+        <h2>Vos données ne quittent jamais votre ordinateur</h2>
+        <p class="privacy-lead">Une application de finances sait tout de vous. C’est pourquoi Aurea a été conçue pour ne rien garder en dehors de votre ordinateur.</p>
+        <div class="privacy-points">
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><h3>Chiffrées avec votre mot de passe</h3><p>Sans votre mot de passe, personne ne peut ouvrir vos données. Pas même Aurea.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H8a5 5 0 1 1 1.6-9.74A6 6 0 0 1 21 12.5"/><path d="M3 3l18 18"/></svg><h3>Ni cloud ni compte</h3><p>Aucun serveur ne garde vos données et aucune inscription en ligne. Tout reste sur votre ordinateur.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 5.2-2.7"/><path d="M19 12.9a10 10 0 0 0-2.1-1.6"/><path d="M2 8.8a15 15 0 0 1 4.2-2.6"/><path d="M22 8.8A15 15 0 0 0 11 4.6"/><path d="M3 3l18 18"/></svg><h3>Utilisable aussi hors ligne</h3><p>Si vous le préférez, Aurea fonctionne sans internet. Certaines fonctions, comme la connexion bancaire et les cours, ont besoin d’une connexion.</p></div>
+          <div class="privacy-point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>Banque en lecture seule</h3><p>Aurea voit vos opérations mais ne touche jamais à votre argent.</p></div>
+        </div>
+        <p class="privacy-link"><a href="privacy/?lang=fr">Lire la politique de confidentialité</a></p>
+      </div>
+
+      <h2 class="section-title">Prix</h2>
+      <div class="pricing">
+        <div class="amount">24,99 €</div>
+        <p>Paiement unique. Sans abonnement.</p>
+        <ul>
+          <li>Licence pour 2 ordinateurs en même temps</li>
+          <li>Mises à jour automatiques incluses</li>
+          <li>Plusieurs profils, chacun avec son mot de passe</li>
+          <li>En portugais, anglais et français</li>
+        </ul>
+        <div class="actions" style="justify-content:center"><a class="button primary" href="https://aurea-finance.lemonsqueezy.com/checkout/buy/1bcc2810-c5f4-482f-b261-54ded2d5ed3e">Acheter Aurea</a></div>
+        <p class="price-note">Le paiement est géré par Lemon Squeezy, qui émet la facture. Après l’achat, vous recevez par e-mail le lien de téléchargement et votre clé.</p>
+      </div>
+
+      <h2 class="section-title">Questions fréquentes</h2>
+      <div class="faq">
+        <details><summary>Windows affiche un avertissement à l’installation. Est-ce normal ?</summary><p>Oui. Aurea n’a pas encore de signature numérique, donc Windows affiche « Windows a protégé votre ordinateur ». Cliquez sur « Informations complémentaires » puis sur « Exécuter quand même ». Cela n’arrive qu’à l’installation.</p></details>
+        <details><summary>Faut-il internet ?</summary><p>Pour profiter de tout, oui. Si vous le préférez, vous pouvez utiliser Aurea hors ligne : vous saisissez, consultez et planifiez tout, mais certaines fonctions ne sont pas disponibles. Elles ont besoin d’une connexion : l’activation de la licence (une seule fois), la connexion bancaire automatique, les cours des placements et les taux de change, des indicateurs comme l’Euribor et l’inflation, la synchronisation avec Google Agenda, les mises à jour d’Aurea et l’envoi de signalements de problèmes. Hors ligne, vous gardez les dernières valeurs connues.</p></details>
+        <details><summary>Quelles banques fonctionnent ?</summary><p>La connexion automatique utilise Enable Banking, qui couvre la plupart des banques européennes. Vous pouvez aussi importer des relevés CSV, CAMT.053 ou MT940, ou tout saisir à la main.</p></details>
+        <details><summary>Fonctionne-t-elle en dehors du Portugal ?</summary><p>Oui, partout en Europe. Aurea fonctionne en euros et la connexion bancaire automatique couvre la plupart des banques européennes. Si vous avez des placements dans d’autres devises, comme le dollar ou la livre, Aurea les convertit en euros au taux de change du jour.</p></details>
+        <details><summary>Puis-je utiliser Aurea sur un autre ordinateur ?</summary><p>Oui. Chaque clé couvre deux ordinateurs en même temps. Pour changer, libérez l’ancien dans les Paramètres et activez le nouveau.</p></details>
+        <details><summary>Et si je perds mon mot de passe ?</summary><p>Aurea ne peut pas récupérer vos données sans le mot de passe : conservez-le bien et faites des sauvegardes (Aurea propose cette option).</p></details>
+        <details><summary>Fonctionne-t-elle sur Mac ?</summary><p>Pour l’instant, uniquement sur Windows 10 et 11.</p></details>
+        <details><summary>Puis-je être remboursé ?</summary><p>S’agissant d’un contenu numérique fourni immédiatement, vous renoncez au droit de rétractation de 14 jours lors de l’achat. Si Aurea ne fonctionne pas comme décrit, écrivez-nous et nous trouverons une solution. Voir les <a href="terms/?lang=fr">Conditions d’utilisation</a>.</p></details>
+        <details><summary>Est-ce un conseil financier ?</summary><p>Non. Aurea organise et affiche vos chiffres. Le score de santé financière et les prévisions sont de simples indications calculées à partir de ce que vous saisissez, pas des recommandations. Aurea ne conseille ni placements ni produits financiers, et les décisions vous appartiennent toujours. Pour les décisions importantes, adressez-vous à un professionnel qualifié.</p></details>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <p class="disclaimer"><span data-lang="pt">A Aurea é uma ferramenta de organização pessoal e não presta aconselhamento financeiro, fiscal ou de investimento.</span><span data-lang="en">Aurea is a personal organisation tool and does not provide financial, tax or investment advice.</span><span data-lang="fr">Aurea est un outil d’organisation personnelle et ne fournit aucun conseil financier, fiscal ou en investissement.</span></p>
+      <div class="links">
+        <a href="terms/"><span data-lang="pt">Termos</span><span data-lang="en">Terms</span><span data-lang="fr">Conditions</span></a>
+        <a href="privacy/"><span data-lang="pt">Privacidade</span><span data-lang="en">Privacy</span><span data-lang="fr">Confidentialité</span></a>
+        <a href="mailto:aurea.app.suporte@gmail.com">aurea.app.suporte@gmail.com</a>
+      </div>
+      <span>© 2026 Aurea</span>
+    </footer>
+  </div>
   <script src="assets/site.js"></script>
 </body>
 </html>
