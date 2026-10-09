@@ -129,8 +129,8 @@ body.landing { padding: 0 16px 48px; }
 .privacy-band { margin: 88px 0 0; padding: 48px 40px; border-radius: 24px; border: 1px solid rgba(235, 216, 176, 0.30); background: radial-gradient(120% 90% at 50% 0%, rgba(235, 216, 176, 0.16), transparent 65%), rgba(255, 255, 255, 0.03); text-align: center; }
 .privacy-band h2 { margin: 0 0 12px; font-size: 34px; font-weight: 500; color: var(--text); }
 .privacy-lead { max-width: 640px; margin: 0 auto 36px; font-size: 18px; }
-.privacy-points { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: left; }
-.privacy-point svg { width: 28px; height: 28px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.privacy-points { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+.privacy-point svg { display: block; margin: 0 auto; width: 28px; height: 28px; fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .privacy-point h3 { margin: 12px 0 6px; font-size: 17px; font-weight: 500; color: var(--text); }
 .privacy-point p { margin: 0; font-size: 15px; }
 .privacy-link { margin: 32px 0 0; }
