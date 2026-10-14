@@ -293,17 +293,18 @@ body.lightbox-open { overflow: hidden; }
 .section-title::after { content: ''; display: block; width: 56px; height: 3px; margin: 18px auto 0; border-radius: 3px; background: linear-gradient(90deg, var(--accent), rgba(var(--gold-rgb), 0.8)); }
 .button.primary { color: #dfeaf4; }
 .step .num { border: 1px solid rgba(var(--blue-rgb), 0.3); }
-/* The curve that links the feature headings. */
-.show { position: relative; }
-.show-curve { position: absolute; left: 0; top: 0; pointer-events: none; overflow: visible; z-index: 0; }
-.show-row { position: relative; z-index: 1; }
-.show-curve-dot { fill: var(--bg); stroke: var(--accent); stroke-width: 2; filter: drop-shadow(0 0 6px rgba(182, 206, 227, 0.6)); }
 /* A thin line under the header, across the whole window. */
 body.landing { position: relative; }
 body.landing::before { content: ''; position: absolute; top: 74px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.10) 15%, rgba(255, 255, 255, 0.10) 85%, transparent); pointer-events: none; }
 .show-row.wide { gap: 56px; }
-/* The background line passes behind the pictures, so they need a solid fill. */
-.show-curve { overflow: visible; }
-.show-curve-dot { display: none; }
+/* Pictures in the features keep a solid fill. */
 .before-after { background: #151519; }
 .show-shot { background: #151519; }
+/* Features: numbered, one block after the other, each set apart by a hairline. */
+.show { counter-reset: feature; gap: 0; }
+.show-row { counter-increment: feature; padding: 72px 0; }
+.show-row:first-child { padding-top: 24px; }
+.show-row + .show-row { border-top: 1px solid var(--line); }
+.show-text h3::before { content: counter(feature, decimal-leading-zero); display: block; margin-bottom: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.14em; color: var(--accent); }
+.show-row.wide .show-text h3::before { margin-left: auto; margin-right: auto; }
+@media (max-width: 720px) { .show-row { padding: 48px 0; } }
