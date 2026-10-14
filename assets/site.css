@@ -308,3 +308,22 @@ body.landing::before { content: ''; position: absolute; top: 74px; left: 0; righ
 .show-text h3::before { content: counter(feature, decimal-leading-zero); display: block; margin-bottom: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.14em; color: var(--accent); }
 .show-row.wide .show-text h3::before { margin-left: auto; margin-right: auto; }
 @media (max-width: 720px) { .show-row { padding: 48px 0; } }
+/* The main call to action in gold. */
+.button.primary { background: linear-gradient(180deg, rgba(var(--gold-rgb), 0.30), rgba(var(--gold-rgb), 0.16)); border-color: rgba(var(--gold-rgb), 0.75); color: #f4e6c6; font-weight: 500; box-shadow: 0 6px 24px rgba(var(--gold-rgb), 0.12); }
+.button.primary:hover { background: rgba(var(--gold-rgb), 0.24); }
+.button.primary.is-soon { opacity: 1; }
+/* Timeline: a quiet hairline with small dots, no glow. */
+.timeline::before { width: 1px; background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14) 6%, rgba(255, 255, 255, 0.14) 94%, transparent); }
+.timeline li::before { width: 9px; height: 9px; top: 29px; border: 0; background: rgba(var(--blue-rgb), 0.75); box-shadow: 0 0 0 4px var(--bg); }
+.timeline li::after { top: 33px; height: 1px; background: rgba(255, 255, 255, 0.10); }
+.timeline li:nth-child(even)::after { background: rgba(255, 255, 255, 0.10); }
+@media (min-width: 761px) {
+  .timeline li::before, .timeline li:nth-child(even)::before { left: calc(50% - 4.5px); }
+  .timeline li::after { right: calc(50% + 10px); }
+  .timeline li:nth-child(even)::after { left: calc(50% + 10px); }
+}
+@media (max-width: 760px) {
+  .timeline::before { left: 4px; }
+  .timeline li::before, .timeline li:nth-child(even)::before { left: 0; }
+  .timeline li::after, .timeline li:nth-child(even)::after { left: 14px; width: 20px; background: rgba(255, 255, 255, 0.10); }
+}
