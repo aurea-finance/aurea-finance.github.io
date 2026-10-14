@@ -111,29 +111,20 @@
         points.push([onRight ? shot.right - box.left + 36 : shot.left - box.left - 36, mid])
       }
       points.push([box.width / 2, box.height + 80])
-      // Catmull-Rom through the points, as smooth cubic curves.
+      // A wave: each bend leaves and reaches its point straight up and down, so the line flows like a sine.
       var d = 'M' + points[0][0] + ' ' + points[0][1]
-      for (var p = 0; p < points.length - 1; p++) {
-        var p0 = points[Math.max(0, p - 1)]
-        var p1 = points[p]
-        var p2 = points[p + 1]
-        var p3 = points[Math.min(points.length - 1, p + 2)]
-        var t = 0.9 / 6
-        d += ' C' + (p1[0] + (p2[0] - p0[0]) * t) + ' ' + (p1[1] + (p2[1] - p0[1]) * t) + ' ' + (p2[0] - (p3[0] - p1[0]) * t) + ' ' + (p2[1] - (p3[1] - p1[1]) * t) + ' ' + p2[0] + ' ' + p2[1]
+      for (var p = 1; p < points.length; p++) {
+        var a = points[p - 1]
+        var b = points[p]
+        var k = (b[1] - a[1]) * 0.55
+        d += ' C' + a[0] + ' ' + (a[1] + k) + ' ' + b[0] + ' ' + (b[1] - k) + ' ' + b[0] + ' ' + b[1]
       }
       var svg = document.createElementNS(NS, 'svg')
       svg.setAttribute('class', 'show-curve')
       svg.setAttribute('aria-hidden', 'true')
       svg.setAttribute('width', box.width)
       svg.setAttribute('height', box.height)
-      var id = 'curve-grad-' + l
-      svg.innerHTML =
-        '<defs><linearGradient id="' + id + '" gradientUnits="userSpaceOnUse" x1="0" y1="-60" x2="0" y2="' + (box.height + 60) + '">' +
-        '<stop offset="0" stop-color="#b6cee3" stop-opacity="0"/><stop offset="0.08" stop-color="#b6cee3" stop-opacity="0.55"/>' +
-        '<stop offset="0.85" stop-color="#b6cee3" stop-opacity="0.5"/><stop offset="0.95" stop-color="#ebd8b0" stop-opacity="0.45"/><stop offset="1" stop-color="#ebd8b0" stop-opacity="0"/></linearGradient>' +
-        '<filter id="' + id + '-glow" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur stdDeviation="9"/></filter></defs>' +
-        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="10" opacity="0.35" filter="url(#' + id + '-glow)"/>' +
-        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="1.6" stroke-linecap="round"/>'
+      svg.innerHTML = '<path d="' + d + '" fill="none" stroke="#1d1d22" stroke-width="5" stroke-linecap="round"/>'
       list.appendChild(svg)
     }
   }
