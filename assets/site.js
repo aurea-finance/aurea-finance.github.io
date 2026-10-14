@@ -83,3 +83,80 @@
     if (Math.abs(delta) > 50) show(delta < 0 ? index + 1 : index - 1)
   })
 })()
+
+// A soft curved line, like a chart, that links the feature headings: it runs
+// beside each text, bends across in the space between rows and never crosses
+// an image. Only drawn when the window leaves room for it.
+;(function () {
+  var NS = 'http://www.w3.org/2000/svg'
+  var LANE = 28
+  function draw() {
+    var lists = document.querySelectorAll('.show')
+    for (var l = 0; l < lists.length; l++) {
+      var list = lists[l]
+      var old = list.querySelector('.show-curve')
+      if (old) old.remove()
+      if (!list.offsetParent || window.innerWidth < 1240) continue
+      var box = list.getBoundingClientRect()
+      var rows = list.querySelectorAll('.show-row')
+      var stops = []
+      for (var i = 0; i < rows.length; i++) {
+        var row = rows[i].getBoundingClientRect()
+        var text = rows[i].querySelector('.show-text').getBoundingClientRect()
+        var head = rows[i].querySelector('.show-text h3').getBoundingClientRect()
+        stops.push({
+          wide: rows[i].classList.contains('wide'),
+          lane: text.left - box.left - LANE,
+          dot: head.top - box.top + head.height / 2,
+          textBottom: text.bottom - box.top,
+          top: row.top - box.top,
+          bottom: row.bottom - box.top
+        })
+      }
+      if (stops.length < 2) continue
+      var margin = -LANE
+      function bend(x1, y1, x2, y2) {
+        var m = (y1 + y2) / 2
+        return ' L' + x1 + ' ' + y1 + ' C' + x1 + ' ' + m + ' ' + x2 + ' ' + m + ' ' + x2 + ' ' + y2
+      }
+      var d = 'M' + stops[0].lane + ' ' + stops[0].dot
+      for (var s = 0; s < stops.length - 1; s++) {
+        var a = stops[s]
+        var b = stops[s + 1]
+        var x = a.lane
+        var y = a.bottom
+        if (a.wide) {
+          // Out of the centred text into the margin, then down beside the wide image.
+          var gapMid = a.textBottom + 28
+          d += bend(a.lane, a.textBottom + 4, margin, gapMid + 20)
+          x = margin
+        }
+        d += bend(x, y, b.lane, b.top) + ' L' + b.lane + ' ' + b.dot
+      }
+      var svg = document.createElementNS(NS, 'svg')
+      svg.setAttribute('class', 'show-curve')
+      svg.setAttribute('aria-hidden', 'true')
+      svg.setAttribute('width', box.width)
+      svg.setAttribute('height', box.height)
+      var id = 'curve-grad-' + l
+      svg.innerHTML =
+        '<defs><linearGradient id="' + id + '" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="' + box.height + '"><stop offset="0" stop-color="#b6cee3" stop-opacity="0.15"/><stop offset="0.12" stop-color="#b6cee3" stop-opacity="0.5"/><stop offset="0.8" stop-color="#b6cee3" stop-opacity="0.45"/><stop offset="1" stop-color="#ebd8b0" stop-opacity="0.5"/></linearGradient></defs>' +
+        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+        stops.map(function (st) { return '<circle cx="' + st.lane + '" cy="' + st.dot + '" r="5" class="show-curve-dot"/>' }).join('')
+      list.appendChild(svg)
+    }
+  }
+  var timer = null
+  function later() { clearTimeout(timer); timer = setTimeout(draw, 60) }
+  window.addEventListener('load', later)
+  window.addEventListener('resize', later)
+  document.addEventListener('click', function (event) { if (event.target.closest('.languages button')) later() })
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(later)
+  if (window.ResizeObserver) {
+    var observer = new ResizeObserver(later)
+    var lists = document.querySelectorAll('.show')
+    for (var i = 0; i < lists.length; i++) observer.observe(lists[i])
+  }
+  var images = document.querySelectorAll('.show img')
+  for (var k = 0; k < images.length; k++) images[k].addEventListener('load', later)
+})()
