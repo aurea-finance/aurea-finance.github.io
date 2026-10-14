@@ -6,7 +6,7 @@
   <title>Aurea</title>
   <meta name="description" content="Aurea: all your personal finances in one place, on your computer. Private and encrypted.">
   <link rel="icon" href="assets/aurea.svg">
-  <link rel="stylesheet" href="assets/site.css?v=20261014c">
+  <link rel="stylesheet" href="assets/site.css?v=20261014e">
 </head>
 <body class="landing">
   <div class="landing-wrap" data-title-pt="Aurea · Finanças pessoais no teu computador" data-title-en="Aurea · Personal finance on your computer" data-title-fr="Aurea · Vos finances personnelles sur votre ordinateur">
@@ -31,13 +31,12 @@
         </div>
         <p class="price-note">Só para Windows 10 e 11 · Em português, inglês e francês</p>
       </div>
-      <div class="hero-cards">
-        <img class="hero-card hero-health" src="assets/hero/pt-health.jpg" alt="Cartão Saúde financeira da Aurea" width="426" height="363">
-        <img class="hero-card hero-planning" src="assets/hero/pt-planning.jpg" alt="Cartão Planeamento de fim de mês da Aurea" width="426" height="420">
-        <img class="hero-card hero-accounts" src="assets/hero/pt-accounts.jpg" alt="Cartão Contas da Aurea" width="359" height="420">
-        <img class="hero-card hero-credits" src="assets/hero/pt-credits.jpg" alt="Cartão Créditos da Aurea" width="359" height="420">
-        <p class="hero-cards-note">Cartões reais da Aurea, com dados de exemplo</p>
+      <div class="glance">
+        <article class="glance-card glance-accounts"><div class="glance-shot"><img src="assets/hero/pt-accounts.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Quanto tens</h3><ul><li>O saldo de todas as contas somado, do banco ao dinheiro da carteira</li><li>Quanto subiu ou desceu face ao mês anterior</li><li>Quanto pesa cada conta no total</li></ul></div></article>
+        <article class="glance-card glance-credits"><div class="glance-shot"><img src="assets/hero/pt-credits.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Quanto deves</h3><ul><li>A dívida de todos os créditos e cartões, somada</li><li>Quanto já amortizaste</li><li>Como a dívida desce ao longo do tempo</li></ul></div></article>
+        <article class="glance-card glance-planning"><div class="glance-shot"><img src="assets/hero/pt-planning.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Com quanto chegas ao fim do mês</h3><ul><li>A previsão do saldo no último dia do mês</li><li>As receitas e despesas que ainda faltam</li><li>Se estás acima ou abaixo do saldo recomendado</li></ul></div></article>
       </div>
+      <p class="glance-note">Partes de cartões reais da Aurea, com dados de exemplo</p>
 
       <h2 class="section-title">Como funciona</h2>
       <div class="steps">
@@ -84,17 +83,16 @@
       </ul>
 
       <h2 class="section-title">Pensada até ao último detalhe</h2>
-      <ul class="more">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>O teu calendário, também no telemóvel:</strong> pagamentos e aniversários sincronizam com o Google Calendar.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Segurança total:</strong> todos os teus dados são guardados localmente no teu computador, encriptados e inacessíveis até para nós.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor e inflação à vista:</strong> sem andares à procura delas.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Perfis ilimitados:</strong> cria quantos perfis quiseres e mantém tudo devidamente organizado.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Cópias de segurança:</strong> num clique, sempre que quiseres.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Housekeeping de forma segura:</strong> arquiva o que já não precisas, para manteres as tuas contas limpas e organizadas, sem teres de perder ou apagar dados nem históricos.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Aprendes em minutos:</strong> com o tutorial interativo e a ajuda.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Em três línguas:</strong> português, inglês e francês, e mudas quando quiseres.</span></li>
-      </ul>
-      <p class="more-end">E muito mais.</p>
+      <ol class="timeline">
+        <li><div class="tl-card"><h3>O teu calendário, também no telemóvel</h3><p>Pagamentos e aniversários sincronizam com o Google Calendar.</p></div></li>
+        <li><div class="tl-card"><h3>Segurança total</h3><p>Todos os teus dados são guardados localmente no teu computador, encriptados e inacessíveis até para nós.</p></div></li>
+        <li><div class="tl-card"><h3>Euribor e inflação à vista</h3><p>Sem andares à procura delas.</p></div></li>
+        <li><div class="tl-card"><h3>Perfis ilimitados</h3><p>Cria quantos perfis quiseres e mantém tudo devidamente organizado.</p></div></li>
+        <li><div class="tl-card"><h3>Cópias de segurança</h3><p>Num clique, sempre que quiseres.</p></div></li>
+        <li><div class="tl-card"><h3>Housekeeping de forma segura</h3><p>Arquiva o que já não precisas, para manteres as tuas contas limpas e organizadas, sem teres de perder ou apagar dados nem históricos.</p></div></li>
+        <li><div class="tl-card"><h3>Aprendes em minutos</h3><p>Com o tutorial interativo e a ajuda.</p></div></li>
+        <li><div class="tl-card"><h3>Automatismos com regras</h3><p>Diz uma vez à Aurea como tratar um movimento e ela faz o mesmo sozinha a todos os seguintes: dá-lhe a categoria e o nome certos, liga-o a um crédito ou marca-o como transferência entre contas tuas.</p></div></li>
+      </ol>
 
       <div class="privacy-band">
         <h2>Os teus dados não saem do teu computador</h2>
@@ -138,13 +136,12 @@
         </div>
         <p class="price-note">Windows 10 and 11 only · In English, Portuguese and French</p>
       </div>
-      <div class="hero-cards">
-        <img class="hero-card hero-health" src="assets/hero/en-health.jpg" alt="Aurea’s Financial health card" width="426" height="363">
-        <img class="hero-card hero-planning" src="assets/hero/en-planning.jpg" alt="Aurea’s End-of-month planning card" width="426" height="420">
-        <img class="hero-card hero-accounts" src="assets/hero/en-accounts.jpg" alt="Aurea’s Accounts card" width="359" height="420">
-        <img class="hero-card hero-credits" src="assets/hero/en-credits.jpg" alt="Aurea’s Loans card" width="359" height="420">
-        <p class="hero-cards-note">Real Aurea cards, with sample data</p>
+      <div class="glance">
+        <article class="glance-card glance-accounts"><div class="glance-shot"><img src="assets/hero/en-accounts.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>What you have</h3><ul><li>The balance of all your accounts added up, from the bank to the cash in your wallet</li><li>How much it went up or down since last month</li><li>How much each account weighs in the total</li></ul></div></article>
+        <article class="glance-card glance-credits"><div class="glance-shot"><img src="assets/hero/en-credits.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>What you owe</h3><ul><li>The debt on all your loans and cards, added up</li><li>How much you’ve already paid off</li><li>How the debt goes down over time</li></ul></div></article>
+        <article class="glance-card glance-planning"><div class="glance-shot"><img src="assets/hero/en-planning.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>How you’ll end the month</h3><ul><li>The expected balance on the last day of the month</li><li>The income and expenses still to come</li><li>Whether you’re above or below the recommended balance</li></ul></div></article>
       </div>
+      <p class="glance-note">Parts of real Aurea cards, with sample data</p>
 
       <h2 class="section-title">How it works</h2>
       <div class="steps">
@@ -191,17 +188,16 @@
       </ul>
 
       <h2 class="section-title">Thought through to the last detail</h2>
-      <ul class="more">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Your calendar, on your phone too:</strong> payments and birthdays sync with Google Calendar.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Complete security:</strong> all your data is kept locally on your computer, encrypted and out of reach, even for us.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor and inflation at a glance:</strong> no need to look them up.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Unlimited profiles:</strong> create as many profiles as you like and keep everything properly organised.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Backups:</strong> in one click, whenever you like.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Safe housekeeping:</strong> archive what you no longer need to keep your accounts clean and organised, without losing or deleting any data or history.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Learn it in minutes:</strong> with the interactive tour and the help centre.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>In three languages:</strong> English, Portuguese and French, and you can switch whenever you like.</span></li>
-      </ul>
-      <p class="more-end">And much more.</p>
+      <ol class="timeline">
+        <li><div class="tl-card"><h3>Your calendar, on your phone too</h3><p>Payments and birthdays sync with Google Calendar.</p></div></li>
+        <li><div class="tl-card"><h3>Complete security</h3><p>All your data is kept locally on your computer, encrypted and out of reach, even for us.</p></div></li>
+        <li><div class="tl-card"><h3>Euribor and inflation at a glance</h3><p>No need to look them up.</p></div></li>
+        <li><div class="tl-card"><h3>Unlimited profiles</h3><p>Create as many profiles as you like and keep everything properly organised.</p></div></li>
+        <li><div class="tl-card"><h3>Backups</h3><p>In one click, whenever you like.</p></div></li>
+        <li><div class="tl-card"><h3>Safe housekeeping</h3><p>Archive what you no longer need to keep your accounts clean and organised, without losing or deleting any data or history.</p></div></li>
+        <li><div class="tl-card"><h3>Learn it in minutes</h3><p>With the interactive tour and the help centre.</p></div></li>
+        <li><div class="tl-card"><h3>Automation with rules</h3><p>Tell Aurea once how to handle a transaction and it does the same on its own for every one that follows: the right category and name, a link to a loan or a transfer between your own accounts.</p></div></li>
+      </ol>
 
       <div class="privacy-band">
         <h2>Your data never leaves your computer</h2>
@@ -245,13 +241,12 @@
         </div>
         <p class="price-note">Uniquement Windows 10 et 11 · En français, anglais et portugais</p>
       </div>
-      <div class="hero-cards">
-        <img class="hero-card hero-health" src="assets/hero/fr-health.jpg" alt="Carte Santé financière d’Aurea" width="426" height="363">
-        <img class="hero-card hero-planning" src="assets/hero/fr-planning.jpg" alt="Carte Prévision de fin de mois d’Aurea" width="426" height="420">
-        <img class="hero-card hero-accounts" src="assets/hero/fr-accounts.jpg" alt="Carte Comptes d’Aurea" width="359" height="420">
-        <img class="hero-card hero-credits" src="assets/hero/fr-credits.jpg" alt="Carte Crédits d’Aurea" width="359" height="420">
-        <p class="hero-cards-note">Vraies cartes d’Aurea, avec des données d’exemple</p>
+      <div class="glance">
+        <article class="glance-card glance-accounts"><div class="glance-shot"><img src="assets/hero/fr-accounts.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Ce que vous avez</h3><ul><li>Le solde de tous vos comptes additionné, de la banque à l’argent de votre portefeuille</li><li>Sa hausse ou sa baisse par rapport au mois dernier</li><li>Le poids de chaque compte dans le total</li></ul></div></article>
+        <article class="glance-card glance-credits"><div class="glance-shot"><img src="assets/hero/fr-credits.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Ce que vous devez</h3><ul><li>La dette de tous vos crédits et cartes, additionnée</li><li>Ce que vous avez déjà remboursé</li><li>La baisse de la dette au fil du temps</li></ul></div></article>
+        <article class="glance-card glance-planning"><div class="glance-shot"><img src="assets/hero/fr-planning.jpg" alt="" loading="lazy"></div><div class="glance-body"><h3>Comment vous finirez le mois</h3><ul><li>Le solde prévu le dernier jour du mois</li><li>Les revenus et dépenses encore à venir</li><li>Si vous êtes au-dessus ou en dessous du solde recommandé</li></ul></div></article>
       </div>
+      <p class="glance-note">Extraits de vraies cartes d’Aurea, avec des données d’exemple</p>
 
       <h2 class="section-title">Comment ça marche</h2>
       <div class="steps">
@@ -298,17 +293,16 @@
       </ul>
 
       <h2 class="section-title">Pensée jusqu’au moindre détail</h2>
-      <ul class="more">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Votre agenda, aussi sur le téléphone :</strong> paiements et anniversaires se synchronisent avec Google Agenda.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Sécurité totale :</strong> toutes vos données sont gardées localement sur votre ordinateur, chiffrées et inaccessibles, même pour nous.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Euribor et inflation sous les yeux:</strong> sans devoir les chercher.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Profils illimités :</strong> créez autant de profils que vous voulez et gardez tout bien organisé.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Sauvegardes:</strong> en un clic, quand vous voulez.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Un rangement en toute sécurité :</strong> archivez ce dont vous n’avez plus besoin pour garder vos comptes propres et organisés, sans perdre ni supprimer de données ou d’historique.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Prise en main en quelques minutes :</strong> avec le tutoriel interactif et l’aide.</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>En trois langues :</strong> français, anglais et portugais, et vous changez quand vous voulez.</span></li>
-      </ul>
-      <p class="more-end">Et bien plus encore.</p>
+      <ol class="timeline">
+        <li><div class="tl-card"><h3>Votre agenda, aussi sur le téléphone</h3><p>Paiements et anniversaires se synchronisent avec Google Agenda.</p></div></li>
+        <li><div class="tl-card"><h3>Sécurité totale</h3><p>Toutes vos données sont gardées localement sur votre ordinateur, chiffrées et inaccessibles, même pour nous.</p></div></li>
+        <li><div class="tl-card"><h3>Euribor et inflation sous les yeux</h3><p>Sans devoir les chercher.</p></div></li>
+        <li><div class="tl-card"><h3>Profils illimités</h3><p>Créez autant de profils que vous voulez et gardez tout bien organisé.</p></div></li>
+        <li><div class="tl-card"><h3>Sauvegardes</h3><p>En un clic, quand vous voulez.</p></div></li>
+        <li><div class="tl-card"><h3>Un rangement en toute sécurité</h3><p>Archivez ce dont vous n’avez plus besoin pour garder vos comptes propres et organisés, sans perdre ni supprimer de données ou d’historique.</p></div></li>
+        <li><div class="tl-card"><h3>Prise en main en quelques minutes</h3><p>Avec le tutoriel interactif et l’aide.</p></div></li>
+        <li><div class="tl-card"><h3>Des automatismes avec les règles</h3><p>Indiquez une fois à Aurea comment traiter une opération et elle fait de même toute seule pour toutes les suivantes : la bonne catégorie et le bon nom, le lien avec un crédit ou un virement entre vos propres comptes.</p></div></li>
+      </ol>
 
       <div class="privacy-band">
         <h2>Vos données ne quittent jamais votre ordinateur</h2>
@@ -350,6 +344,6 @@
       <span>© 2026 Aurea</span>
     </footer>
   </div>
-  <script src="assets/site.js?v=20261014c"></script>
+  <script src="assets/site.js?v=20261014e"></script>
 </body>
 </html>
