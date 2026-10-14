@@ -84,54 +84,42 @@
   })
 })()
 
-// A soft curved line, like a chart, that links the feature headings: it runs
-// beside each text, bends across in the space between rows and never crosses
-// an image. Only drawn when the window leaves room for it.
+// A soft line in the background, like a chart, that weaves from one feature
+// to the next behind the pictures, guiding the eye down the section.
 ;(function () {
   var NS = 'http://www.w3.org/2000/svg'
-  var LANE = 28
   function draw() {
     var lists = document.querySelectorAll('.show')
     for (var l = 0; l < lists.length; l++) {
       var list = lists[l]
       var old = list.querySelector('.show-curve')
       if (old) old.remove()
-      if (!list.offsetParent || window.innerWidth < 1240) continue
+      if (!list.offsetParent || window.innerWidth <= 720) continue
       var box = list.getBoundingClientRect()
       var rows = list.querySelectorAll('.show-row')
-      var stops = []
+      // Around the outer side of each picture, so the wave sweeps from one side of the page to the other.
+      var points = [[box.width / 2, -80]]
       for (var i = 0; i < rows.length; i++) {
-        var row = rows[i].getBoundingClientRect()
-        var text = rows[i].querySelector('.show-text').getBoundingClientRect()
-        var head = rows[i].querySelector('.show-text h3').getBoundingClientRect()
-        stops.push({
-          wide: rows[i].classList.contains('wide'),
-          lane: text.left - box.left - LANE,
-          dot: head.top - box.top + head.height / 2,
-          textBottom: text.bottom - box.top,
-          top: row.top - box.top,
-          bottom: row.bottom - box.top
-        })
-      }
-      if (stops.length < 2) continue
-      var margin = -LANE
-      function bend(x1, y1, x2, y2) {
-        var m = (y1 + y2) / 2
-        return ' L' + x1 + ' ' + y1 + ' C' + x1 + ' ' + m + ' ' + x2 + ' ' + m + ' ' + x2 + ' ' + y2
-      }
-      var d = 'M' + stops[0].lane + ' ' + stops[0].dot
-      for (var s = 0; s < stops.length - 1; s++) {
-        var a = stops[s]
-        var b = stops[s + 1]
-        var x = a.lane
-        var y = a.bottom
-        if (a.wide) {
-          // Out of the centred text into the margin, then down beside the wide image.
-          var gapMid = a.textBottom + 28
-          d += bend(a.lane, a.textBottom + 4, margin, gapMid + 20)
-          x = margin
+        var visual = rows[i].querySelector('.show-visual')
+        var shot = (visual.firstElementChild || visual).getBoundingClientRect()
+        var mid = shot.top - box.top + shot.height / 2
+        if (rows[i].classList.contains('wide')) {
+          points.push([box.width / 2, mid])
+          continue
         }
-        d += bend(x, y, b.lane, b.top) + ' L' + b.lane + ' ' + b.dot
+        var onRight = shot.left - box.left + shot.width / 2 > box.width / 2
+        points.push([onRight ? shot.right - box.left + 36 : shot.left - box.left - 36, mid])
+      }
+      points.push([box.width / 2, box.height + 80])
+      // Catmull-Rom through the points, as smooth cubic curves.
+      var d = 'M' + points[0][0] + ' ' + points[0][1]
+      for (var p = 0; p < points.length - 1; p++) {
+        var p0 = points[Math.max(0, p - 1)]
+        var p1 = points[p]
+        var p2 = points[p + 1]
+        var p3 = points[Math.min(points.length - 1, p + 2)]
+        var t = 0.9 / 6
+        d += ' C' + (p1[0] + (p2[0] - p0[0]) * t) + ' ' + (p1[1] + (p2[1] - p0[1]) * t) + ' ' + (p2[0] - (p3[0] - p1[0]) * t) + ' ' + (p2[1] - (p3[1] - p1[1]) * t) + ' ' + p2[0] + ' ' + p2[1]
       }
       var svg = document.createElementNS(NS, 'svg')
       svg.setAttribute('class', 'show-curve')
@@ -140,9 +128,12 @@
       svg.setAttribute('height', box.height)
       var id = 'curve-grad-' + l
       svg.innerHTML =
-        '<defs><linearGradient id="' + id + '" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="' + box.height + '"><stop offset="0" stop-color="#b6cee3" stop-opacity="0.15"/><stop offset="0.12" stop-color="#b6cee3" stop-opacity="0.5"/><stop offset="0.8" stop-color="#b6cee3" stop-opacity="0.45"/><stop offset="1" stop-color="#ebd8b0" stop-opacity="0.5"/></linearGradient></defs>' +
-        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-        stops.map(function (st) { return '<circle cx="' + st.lane + '" cy="' + st.dot + '" r="5" class="show-curve-dot"/>' }).join('')
+        '<defs><linearGradient id="' + id + '" gradientUnits="userSpaceOnUse" x1="0" y1="-60" x2="0" y2="' + (box.height + 60) + '">' +
+        '<stop offset="0" stop-color="#b6cee3" stop-opacity="0"/><stop offset="0.08" stop-color="#b6cee3" stop-opacity="0.55"/>' +
+        '<stop offset="0.85" stop-color="#b6cee3" stop-opacity="0.5"/><stop offset="0.95" stop-color="#ebd8b0" stop-opacity="0.45"/><stop offset="1" stop-color="#ebd8b0" stop-opacity="0"/></linearGradient>' +
+        '<filter id="' + id + '-glow" x="-20%" y="-5%" width="140%" height="110%"><feGaussianBlur stdDeviation="9"/></filter></defs>' +
+        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="10" opacity="0.35" filter="url(#' + id + '-glow)"/>' +
+        '<path d="' + d + '" fill="none" stroke="url(#' + id + ')" stroke-width="1.6" stroke-linecap="round"/>'
       list.appendChild(svg)
     }
   }
